@@ -1,0 +1,6 @@
+{
+  "name": "EduTrack360",
+  "description": "Comprehensive University ERP System & Intelligent Attendance Tracking Suite",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
