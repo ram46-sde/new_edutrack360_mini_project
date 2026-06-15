@@ -538,17 +538,17 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
   const filteredClassesForForms = classes.filter(c => c.courseId === newStudCourseId);
 
   return (
-    <div id="admin-dashboard" className="min-h-screen flex flex-col bg-slate-50/50 font-sans">
+    <div id="admin-dashboard" className="min-h-screen flex flex-col bg-[#faf9ff] font-sans">
       {/* Top Professional Header Bar - Glossy Crisp Light SaaS layout */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 text-slate-800 shadow-[0_1px_3px_rgba(0,0,0,0.01)]">
+      <header className="bg-white/80 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 text-slate-800 shadow-[0_1px_3px_rgba(0,0,0,0.015)]">
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-slate-900 rounded-xl text-emerald-400">
-              <BookOpen className="w-5 h-5" />
+            <div className="p-2.5 bg-slate-950 rounded-xl text-white shadow-sm">
+              <BookOpen className="w-5 h-5 text-lavender-300" />
             </div>
             <div>
-              <h1 className="font-display text-lg font-bold tracking-tight text-slate-900">
-                EduTrack<span className="text-emerald-600 font-extrabold">360</span>
+              <h1 className="font-display text-lg font-extrabold tracking-tight text-slate-900">
+                EduTrack<span className="text-lavender-500 font-extrabold">360</span>
               </h1>
               <p className="text-[10.5px] text-slate-400 font-mono font-semibold uppercase tracking-wider">ERP Core Console</p>
             </div>
@@ -561,9 +561,9 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
             <button
               id="admin-logout-btn"
               onClick={onLogout}
-              className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg flex items-center gap-2 border border-slate-900 transition-all cursor-pointer shadow-sm"
+              className="px-4 py-2 bg-black hover:bg-slate-800 text-white text-xs font-semibold rounded-xl flex items-center gap-2 transition-all cursor-pointer shadow-sm"
             >
-              <LogOut className="w-3.5 h-3.5" />
+              <LogOut className="w-3.5 h-3.5 text-lavender-300" />
               Sign Out
             </button>
           </div>
@@ -577,10 +577,10 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
         {toast && (
           <div id="admin-toast-alert" className={`fixed bottom-4 right-4 z-50 p-4 rounded-xl shadow-xl flex items-center gap-3 max-w-md border transition-all duration-300 ${
             toast.type === "success" 
-              ? "bg-slate-900 border-emerald-500/20 text-emerald-400" 
+              ? "bg-slate-900 border-lavender-500/20 text-lavender-300" 
               : "bg-slate-900 border-rose-500/20 text-rose-400"
           }`}>
-            <Sparkles className="w-4 h-4 shrink-0 text-emerald-400" />
+            <Sparkles className="w-4 h-4 shrink-0 text-lavender-350 text-lavender-300 animate-pulse" />
             <span className="text-xs font-semibold tracking-wide uppercase font-mono">{toast.message}</span>
           </div>
         )}
@@ -595,10 +595,10 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
               <button
                 id="tab-courses-btn"
                 onClick={() => setActiveTab("courses")}
-                className={`w-full px-3.5 py-2.5 rounded-lg text-left text-sm font-semibold transition-all flex items-center justify-between ${
+                className={`w-full px-3.5 py-2.5 rounded-xl text-left text-sm font-semibold transition-all flex items-center justify-between cursor-pointer ${
                   activeTab === "courses" 
-                    ? "bg-slate-900 text-white shadow-sm" 
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-[#8B5CF6] text-white shadow-md shadow-[#8B5CF6]/15" 
+                    : "text-slate-600 hover:bg-[#faf9ff] hover:text-[#8B5CF6]"
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -611,10 +611,10 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
               <button
                 id="tab-faculty-btn"
                 onClick={() => setActiveTab("faculty")}
-                className={`w-full px-3.5 py-2.5 rounded-lg text-left text-sm font-semibold transition-all flex items-center justify-between ${
+                className={`w-full px-3.5 py-2.5 rounded-xl text-left text-sm font-semibold transition-all flex items-center justify-between cursor-pointer ${
                   activeTab === "faculty" 
-                    ? "bg-slate-900 text-white shadow-sm" 
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-[#8B5CF6] text-white shadow-md shadow-[#8B5CF6]/15" 
+                    : "text-slate-600 hover:bg-[#faf9ff] hover:text-[#8B5CF6]"
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -629,10 +629,10 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
               <button
                 id="tab-students-btn"
                 onClick={() => setActiveTab("students")}
-                className={`w-full px-3.5 py-2.5 rounded-lg text-left text-sm font-semibold transition-all flex items-center justify-between ${
+                className={`w-full px-3.5 py-2.5 rounded-xl text-left text-sm font-semibold transition-all flex items-center justify-between cursor-pointer ${
                   activeTab === "students" 
-                    ? "bg-slate-900 text-white shadow-sm" 
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-[#8B5CF6] text-white shadow-md shadow-[#8B5CF6]/15" 
+                    : "text-slate-600 hover:bg-[#faf9ff] hover:text-[#8B5CF6]"
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -645,10 +645,10 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
               <button
                 id="tab-requests-btn"
                 onClick={() => setActiveTab("requests")}
-                className={`w-full px-3.5 py-2.5 rounded-lg text-left text-sm font-semibold transition-all flex items-center justify-between relative ${
+                className={`w-full px-3.5 py-2.5 rounded-xl text-left text-sm font-semibold transition-all flex items-center justify-between relative cursor-pointer ${
                   activeTab === "requests" 
-                    ? "bg-slate-900 text-white shadow-sm" 
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-[#8B5CF6] text-white shadow-md shadow-[#8B5CF6]/15" 
+                    : "text-slate-600 hover:bg-[#faf9ff] hover:text-[#8B5CF6]"
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -657,7 +657,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                 </div>
                 <div className="flex items-center gap-1.5">
                   {requests.filter(r => r.status === "pending").length > 0 && (
-                    <span id="pending-requests-count" className="px-2 py-0.5 bg-rose-500 rounded-full text-[10px] font-extrabold text-white font-mono">
+                    <span id="pending-requests-count" className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold font-mono ${activeTab === "requests" ? "bg-white text-rose-500" : "bg-rose-500 text-white"}`}>
                       {requests.filter(r => r.status === "pending").length}
                     </span>
                   )}
@@ -673,10 +673,10 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                   setNewPassword("");
                   setConfirmNewPassword("");
                 }}
-                className={`w-full px-3.5 py-2.5 rounded-lg text-left text-sm font-semibold transition-all flex items-center justify-between ${
+                className={`w-full px-3.5 py-2.5 rounded-xl text-left text-sm font-semibold transition-all flex items-center justify-between cursor-pointer ${
                   activeTab === "profile" 
-                    ? "bg-slate-900 text-white shadow-sm" 
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-[#8B5CF6] text-white shadow-md shadow-[#8B5CF6]/15" 
+                    : "text-slate-600 hover:bg-[#faf9ff] hover:text-[#8B5CF6]"
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -691,7 +691,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
           {/* Quick Metrics */}
           <div className="bg-white rounded-xl p-5 shadow-[0_1px_3px_rgb(0,0,0,0.02)] border border-slate-200/80 space-y-3">
             <h4 className="text-[10px] font-mono font-extrabold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-500" /> Platform Statistics
+              <Sparkles className="w-3.5 h-3.5 text-lavender-500" /> Platform Statistics
             </h4>
             <div className="grid grid-cols-2 gap-3 text-center">
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200/50">
@@ -727,7 +727,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                 {/* Courses creation Card */}
                 <div className="bg-white rounded-xl shadow-sm border border-slate-200/80 p-5 space-y-4">
                   <div className="flex items-center gap-2 border-b border-sm border-slate-100 pb-3">
-                    <Layers className="w-5 h-5 text-emerald-600" />
+                    <Layers className="w-5 h-5 text-lavender-650 text-lavender-500" />
                     <h2 className="font-display font-semibold text-slate-800 text-md">Register New Course</h2>
                   </div>
                   <form onSubmit={handleCreateCourse} className="space-y-3">
@@ -740,7 +740,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                       placeholder="e.g. BTECH-CSE" 
                       value={newCourseCode}
                       onChange={(e) => setNewCourseCode(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                     />
                     </div>
                     <div>
@@ -752,14 +752,14 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                       placeholder="e.g. Bachelor of Computer Science" 
                       value={newCourseName}
                       onChange={(e) => setNewCourseName(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                     />
                     </div>
                     <button 
                       id="course-submit-btn"
                       type="submit" 
                       disabled={loading}
-                      className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-medium rounded-lg text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-2.5 bg-black hover:bg-slate-800 text-white font-semibold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md active:scale-98"
                     >
                       <Plus className="w-4 h-4" /> Setup Course
                     </button>
@@ -786,7 +786,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                             <div className="flex items-center gap-1 shrink-0">
                               <button 
                                 onClick={() => startEditCourse(course)}
-                                className="text-slate-400 hover:text-emerald-600 active:scale-95 transition-all cursor-pointer p-1"
+                                className="text-slate-400 hover:text-lavender-500 active:scale-95 transition-all cursor-pointer p-1"
                                 title="Edit Course"
                               >
                                 <Pencil className="w-3.5 h-3.5" />
@@ -824,7 +824,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         required
                         value={newClassCourseId}
                         onChange={(e) => setNewClassCourseId(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-lavender-500"
                       >
                         <option value="">-- Choose Course Path --</option>
                         {courses.map(c => (
@@ -841,7 +841,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         placeholder="e.g. CSE-2026-A" 
                         value={newClassName}
                         onChange={(e) => setNewClassName(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-lavender-500"
                       />
                     </div>
                     <button 
@@ -900,7 +900,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                           placeholder="e.g. CS-101" 
                           value={newSubjectCode}
                           onChange={(e) => setNewSubjectCode(e.target.value)}
-                          className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-merald-500"
+                          className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-lavender-500"
                         />
                       </div>
                       <div>
@@ -912,7 +912,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                           placeholder="e.g. Data Structures" 
                           value={newSubjectName}
                           onChange={(e) => setNewSubjectName(e.target.value)}
-                          className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-merald-500"
+                          className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-lavender-500"
                         />
                       </div>
                     </div>
@@ -923,7 +923,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         required
                         value={newSubjectCourseId}
                         onChange={(e) => setNewSubjectCourseId(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-lavender-500"
                       >
                         <option value="">-- Select Course --</option>
                         {courses.map(c => (
@@ -984,7 +984,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                 {/* Onboard Faculty Credentials Form */}
                 <div className="md:col-span-1 bg-white rounded-xl shadow-sm border border-slate-200/80 p-5 space-y-4">
                   <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-                    <Users className="w-5 h-5 text-emerald-600" />
+                    <Users className="w-5 h-5 text-lavender-550 text-lavender-500" />
                     <h2 className="font-display font-semibold text-slate-800 text-md">Onboard Faculty</h2>
                   </div>
                   <form onSubmit={handleCreateFaculty} className="space-y-3">
@@ -997,7 +997,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         placeholder="e.g. Dr. Ada Lovelace" 
                         value={newFacName}
                         onChange={(e) => setNewFacName(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                       />
                     </div>
                     <div>
@@ -1009,7 +1009,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         placeholder="e.g. ada@university.edu" 
                         value={newFacEmail}
                         onChange={(e) => setNewFacEmail(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                       />
                     </div>
                     <div>
@@ -1021,7 +1021,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         placeholder="e.g. adalovelace" 
                         value={newFacUsername}
                         onChange={(e) => setNewFacUsername(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                       />
                     </div>
                     <div>
@@ -1030,17 +1030,17 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         id="fac-password-input"
                         type="password" 
                         required 
-                        placeholder="••••••••" 
+                        placeholder="• • • • • • • •" 
                         value={newFacPassword}
                         onChange={(e) => setNewFacPassword(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                       />
                     </div>
                     <button 
                       id="fac-submit-btn"
                       type="submit" 
                       disabled={loading}
-                      className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-medium rounded-lg text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-2.5 bg-black hover:bg-slate-800 text-white font-semibold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md active:scale-98"
                     >
                       <Plus className="w-4 h-4" /> Save Profile
                     </button>
@@ -1103,7 +1103,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         required
                         value={assignSubjectId}
                         onChange={(e) => setAssignSubjectId(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-lavender-500"
                       >
                         <option value="">-- Choose Subject --</option>
                         {subjects.map(s => {
@@ -1121,7 +1121,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         required
                         value={assignFacultyId}
                         onChange={(e) => setAssignFacultyId(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-emerald-500"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-lavender-500"
                       >
                         <option value="">-- Choose Faculty --</option>
                         {faculty.map(f => (
@@ -1154,12 +1154,12 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                   {/* Dynamic Faculty Allocation Search Bar */}
                   <div className="mt-3 mb-2">
                     <input
-                      id="faculty-allocation-search"
-                      type="text"
-                      placeholder="Search faculty name, ID, email, or subject..."
-                      value={facultySearchQuery}
-                      onChange={(e) => setFacultySearchQuery(e.target.value)}
-                      className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:bg-white focus:outline-none focus:border-emerald-500 font-medium placeholder-slate-400 font-sans"
+                       id="faculty-allocation-search"
+                       type="text"
+                       placeholder="Search faculty name, ID, email, or subject..."
+                       value={facultySearchQuery}
+                       onChange={(e) => setFacultySearchQuery(e.target.value)}
+                       className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:bg-white focus:outline-none focus:border-lavender-500 font-medium placeholder-slate-400 font-sans"
                     />
                   </div>
 
@@ -1196,7 +1196,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                           <div>
                             <span className="font-semibold text-slate-800">{as.facultyName}</span>
                             <span className="text-slate-400 mx-2">allocated to teach</span>
-                            <span className="px-1.5 py-0.5 bg-emerald-50 border border-emerald-200 text-emerald-800 font-medium rounded text-[10px] uppercase font-mono mr-1">
+                            <span className="px-1.5 py-0.5 bg-lavender-50 border border-lavender-200 text-lavender-800 font-medium rounded text-[10px] uppercase font-mono mr-1">
                               {as.subjectCode}
                             </span>
                             <span className="text-slate-600 font-medium font-sans">{as.subjectName}</span>
@@ -1226,7 +1226,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
               {/* Register student files */}
               <div className="md:col-span-1 bg-white rounded-xl shadow-sm border border-slate-200/80 p-5 space-y-4">
                 <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-                  <GraduationCap className="w-5 h-5 text-emerald-600" />
+                  <GraduationCap className="w-5 h-5 text-lavender-550 text-lavender-500" />
                   <h2 className="font-display font-semibold text-slate-800 text-md">Onboard Student</h2>
                 </div>
                 <form onSubmit={handleCreateStudent} className="space-y-3">
@@ -1239,7 +1239,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                       placeholder="e.g. ROLL-2026-0043" 
                       value={newStudRoll}
                       onChange={(e) => setNewStudRoll(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-merald-500"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-lavender-500"
                     />
                   </div>
                   <div>
@@ -1251,7 +1251,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                       placeholder="e.g. Alan Turing" 
                       value={newStudName}
                       onChange={(e) => setNewStudName(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-3">
@@ -1265,7 +1265,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                           setNewStudCourseId(e.target.value);
                           setNewStudClassId(""); // reset section
                         }}
-                        className="w-full px-2.5 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-emerald-500"
+                        className="w-full px-2.5 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-lavender-500"
                       >
                         <option value="">-- Path --</option>
                         {courses.map(c => (
@@ -1281,7 +1281,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         disabled={!newStudCourseId}
                         value={newStudClassId}
                         onChange={(e) => setNewStudClassId(e.target.value)}
-                        className="w-full px-2.5 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-emerald-500 disabled:opacity-50"
+                        className="w-full px-2.5 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-lavender-500 disabled:opacity-50"
                       >
                         <option value="">-- Class --</option>
                         {filteredClassesForForms.map(cl => (
@@ -1300,7 +1300,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         placeholder="e.g. alanturing" 
                         value={newStudUsername}
                         onChange={(e) => setNewStudUsername(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                       />
                     </div>
                     <div>
@@ -1312,7 +1312,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         placeholder="••••••••" 
                         value={newStudPassword}
                         onChange={(e) => setNewStudPassword(e.target.value)}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/5 transition-all font-medium"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50/50 hover:bg-white focus:bg-white focus:outline-none focus:border-lavender-500 focus:ring-4 focus:ring-lavender-500/5 transition-all font-medium"
                       />
                     </div>
                   </div>
@@ -1320,7 +1320,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                     id="stud-submit-btn"
                     type="submit" 
                     disabled={loading}
-                    className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-medium rounded-lg text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 bg-black hover:bg-slate-800 text-white font-semibold rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md active:scale-98"
                   >
                     <Plus className="w-4 h-4" /> Save Student
                   </button>
@@ -1414,7 +1414,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                             <button
                               id={`approve-btn-${req.id}`}
                               onClick={() => handleRequestStatus(req.id, "approved")}
-                              className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-medium rounded-lg text-xs flex items-center gap-1 cursor-pointer transition-all shadow-sm"
+                              className="px-3 py-1.5 bg-lavender-600 hover:bg-lavender-500 active:bg-lavender-700 text-white font-semibold rounded-lg text-xs flex items-center gap-1 cursor-pointer transition-all shadow-sm"
                             >
                               <CheckCircle2 className="w-3.5 h-3.5" /> Approve
                             </button>
@@ -1429,7 +1429,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                         ) : (
                           <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase ${
                             req.status === "approved" 
-                              ? "bg-emerald-100 text-emerald-800 border border-emerald-200" 
+                              ? "bg-lavender-100 text-lavender-800 border border-lavender-200" 
                               : "bg-rose-100 text-rose-800 border border-rose-200"
                           }`}>
                             {req.status}
@@ -1460,7 +1460,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                     placeholder="••••••••"
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="w-full px-3 py-2.5 border border-slate-250 rounded-lg text-sm focus:outline-none focus:border-emerald-500 font-medium"
+                    className="w-full px-3 py-2.5 border border-slate-250 rounded-lg text-sm focus:outline-none focus:border-lavender-500 font-medium"
                   />
                 </div>
 
@@ -1473,7 +1473,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                     placeholder="••••••••"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    className="w-full px-3 py-2.5 border border-slate-250 rounded-lg text-sm focus:outline-none focus:border-emerald-500 font-medium"
+                    className="w-full px-3 py-2.5 border border-slate-250 rounded-lg text-sm focus:outline-none focus:border-lavender-500 font-medium"
                   />
                 </div>
 
@@ -1486,7 +1486,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                     placeholder="••••••••"
                     value={confirmNewPassword}
                     onChange={(e) => setConfirmNewPassword(e.target.value)}
-                    className="w-full px-3 py-2.5 border border-slate-250 rounded-lg text-sm focus:outline-none focus:border-emerald-500 font-medium"
+                    className="w-full px-3 py-2.5 border border-slate-250 rounded-lg text-sm focus:outline-none focus:border-lavender-500 font-medium"
                   />
                 </div>
 
@@ -1535,7 +1535,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
           <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-6 max-w-md w-full space-y-4">
             <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <Pencil className="w-5 h-5 text-emerald-600" />
+              <Pencil className="w-5 h-5 text-lavender-550 text-lavender-500" />
               <h3 className="font-display font-bold text-slate-800 text-md">Modify Course Curriculum</h3>
             </div>
             <form onSubmit={handleEditCourseSubmit} className="space-y-4">
@@ -1546,7 +1546,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                   required
                   value={editCourseCode}
                   onChange={(e) => setEditCourseCode(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs uppercase focus:outline-none focus:border-emerald-500 bg-white"
+                  className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs uppercase focus:outline-none focus:border-lavender-500 bg-white"
                   placeholder="e.g. CS-201"
                 />
               </div>
@@ -1557,7 +1557,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                   required
                   value={editCourseName}
                   onChange={(e) => setEditCourseName(e.target.value)}
-                  className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-emerald-500 bg-white"
+                  className="w-full px-3 py-2 border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-lavender-500 bg-white"
                   placeholder="e.g. Software Engineering"
                 />
               </div>
@@ -1572,7 +1572,7 @@ export default function AdminDashboard({ adminUser, onLogout }: AdminDashboardPr
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg cursor-pointer transition-colors flex items-center gap-1.5"
+                  className="px-4 py-2 bg-lavender-650 bg-lavender-600 hover:bg-lavender-500 text-white text-xs font-semibold rounded-lg cursor-pointer transition-colors flex items-center gap-1.5 shadow-sm"
                 >
                   Save Changes
                 </button>
